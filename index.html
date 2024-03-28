@@ -13,9 +13,20 @@
     />
     <meta name="keywords" content="bootstrap, bootstrap4" />
 
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" />
+
     <link rel="shortcut icon" href="images/jordan1-icon.png" />
 
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+
     <!-- Bootstrap CSS -->
+
+    <!-- Font
+    <link rel="stylesheet" type="text/css" href="css/sourcesanspro-font.css" />
+    -->
+
+    <link rel="stylesheet" href="css/style-login.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -23,6 +34,7 @@
     />
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+
     <title>SoleSecure</title>
   </head>
 
@@ -31,6 +43,7 @@
     <nav
       class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
       arial-label="Furni navigation bar"
+      role="navigation"
     >
       <div class="container">
         <a class="navbar-brand" href="index.html">SoleSecure<span>.</span></a>
@@ -50,20 +63,20 @@
         <div class="collapse navbar-collapse" id="navbarsFurni">
           <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
-            <li><a class="nav-link" href="stock.html">In stock</a></li>
-            <li><a class="nav-link" href="about.html">About us</a></li>
-            <li><a class="nav-link" href="services.html">Services</a></li>
-            <li><a class="nav-link" href="locations.html">Locations</a></li>
+            <li><a class="nav-link" href="#stock">In stock</a></li>
+            <li><a class="nav-link" href="#about">About us</a></li>
+            <li><a class="nav-link" href="#services">Services</a></li>
+            <li><a class="nav-link" href="#locations">Locations</a></li>
 
-            <li><a class="nav-link" href="contact.html">Contact us</a></li>
-            <li><a class="nav-link" href="login.html">Login</a></li>
+            <li><a class="nav-link" href="#contact">Contact us</a></li>
+            <li><a class="nav-link" href="#login">Login</a></li>
           </ul>
 
           <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
             <li>
-              <a class="nav-link" href="account.html"
+              <a class="nav-link" href="#account"
                 ><img src="images/user.svg"
               /></a>
             </li>
@@ -73,247 +86,16 @@
     </nav>
     <!-- End Header/Navigation -->
 
-    <!-- Start Hero Section -->
-    <div class="hero">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-5">
-            <div class="intro-excerpt">
-              <h1>
-                Secure your kicks <span class="d-block">for store pickup.</span>
-              </h1>
-              <p class="mb-4">
-                With a click of a button, reserve your sneakers for pickup at
-                one of our
-                <a href="locations.html" style="color: white">stores</a>.
-              </p>
-              <p>
-                <a href="stock.html" class="btn btn-white-outline">Explore</a>
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="hero-img-wrap">
-              <img src="images/jordan4invert.png" class="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Hero Section -->
-
-    <!-- Start Product Section -->
-    <div class="product-section">
-      <div class="container">
-        <div class="row">
-          <!-- Start Column 1 -->
-          <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-            <h2 class="mb-4 section-title">
-              All the sneakers you ever dreamed of.
-            </h2>
-            <p class="mb-4">Make sure your dream kicks are yours.</p>
-            <p><a href="stock.html" class="btn">Explore</a></p>
-          </div>
-          <!-- End Column 1 -->
-
-          <!-- Start Column 2 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img
-                src="images/adidas-samba.png"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">Adidas Samba</h3>
-              <strong class="product-price">$100.00</strong>
-            </a>
-          </div>
-          <!-- End Column 2 -->
-
-          <!-- Start Column 3 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img
-                src="images/shattered-backboard-1.png"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">
-                Air Jordan 1 Reverse Shattered backboard
-              </h3>
-              <strong class="product-price">$250.00</strong>
-            </a>
-          </div>
-          <!-- End Column 3 -->
-
-          <!-- Start Column 4 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img src="images/kaws4.png" class="img-fluid product-thumbnail" />
-              <h3 class="product-title">Air Jordan 4 KAWS</h3>
-              <strong class="product-price">$300.00</strong>
-            </a>
-          </div>
-          <!-- End Column 4 -->
-        </div>
-      </div>
-    </div>
-    <!-- End Product Section -->
-
-    <!-- Start Why Choose Us Section -->
-    <div class="why-choose-section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-6">
-            <h2 class="section-title">Why Choose Us</h2>
-            <p>
-              Elevate your sneaker shopping experience with SoleSecure, where
-              seamless convenience meets unrivaled style.
-            </p>
-
-            <div class="row my-5">
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img
-                      src="images/car.svg"
-                      style="height: 50px"
-                      alt="vroom"
-                      class="imf-fluid"
-                    />
-                  </div>
-                  <h3>Easy pickup</h3>
-                  <p>
-                    Experience the ultimate convenience as our streamlined
-                    reservation system ensures a hassle-free and quick in-store
-                    pickup, allowing you to step into your new sneakers without
-                    delay.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/bag.svg" alt="Image" class="imf-fluid" />
-                  </div>
-                  <h3>48-hour pickup time</h3>
-                  <p>
-                    At SoleSecure, time is of the essence. Benefit from our
-                    swift 48-hour pickup guarantee, ensuring your chosen
-                    sneakers are ready for you in-store at your earliest
-                    convenience.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img
-                      src="images/support.svg"
-                      alt="Image"
-                      class="imf-fluid"
-                    />
-                  </div>
-                  <h3>Great Customer Support</h3>
-                  <p>
-                    Our dedicated team is at your service, ready to assist with
-                    any inquiries or guidance you may need, ensuring your
-                    fulfilling shopping journey from selection to pickup.
-                  </p>
-                </div>
-              </div>
-
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img
-                      src="images/return.svg"
-                      alt="Image"
-                      class="imf-fluid"
-                    />
-                  </div>
-                  <h3>Hassle Free Returns</h3>
-                  <p>
-                    Not satisfied? No problem. Enjoy peace of mind with our
-                    hassle-free return process, making exchanges or refunds as
-                    easy as slipping into your favorite pair of sneakers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="img-wrap">
-              <img
-                src="images/pile-of-sneakers.jpg"
-                alt="slikaaaaa bice polako trazim
-      "
-                class="img-fluid"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Why Choose Us Section -->
-
-    <!-- Start Popular Product -->
-    <div class="popular-product">
-      <h2 id="popular-prod-h">Popular products</h2>
-      <div class="container">
-        <p>You might be interested in:</p>
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img
-                  src="images/ultraboost-got-manja.png"
-                  alt="Image"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="pt-3">
-                <h3>Adidas Ultraboost 4.0 x Game of Thrones House Stark</h3>
-
-                <p><a href="#">Go to item</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img src="images/nike-dunk.png" alt="Image" class="img-fluid" />
-              </div>
-              <div class="pt-3">
-                <h3>Nike Dunk Low</h3>
-
-                <p><a href="#">Go to item</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="product-item-sm d-flex">
-              <div class="thumbnail">
-                <img
-                  src="images/adidas-nmd.png"
-                  alt="Image"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="pt-3">
-                <h3>Adidas NMD R1 Tricolor</h3>
-
-                <p><a href="#">Go to item</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Popular Product -->
+    <main id="spapp" role="main">
+      <section id="home" data-load="home.html"></section>
+      <section id="stock" data-load="stock.html"></section>
+      <section id="about" data-load="about.html"></section>
+      <section id="services" data-load="services.html"></section>
+      <section id="locations" data-load="locations.html"></section>
+      <section id="contact" data-load="contact.html"></section>
+      <section id="login" data-load="login.html"></section>
+      <section id="account" data-load="account.html"></section>
+    </main>
 
     <!-- Start Footer Section -->
     <footer class="footer-section">
@@ -358,8 +140,16 @@
     </footer>
     <!-- End Footer Section -->
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.spapp.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/custom.js"></script>
+    <script>
+      var app = $.spapp({
+        defaultView: "#home",
+        templateDir: "./views/",
+      });
+
+      app.run();
+    </script>
   </body>
 </html>
