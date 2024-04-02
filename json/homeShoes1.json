@@ -1,0 +1,22 @@
+{
+  "homeShoes1": [
+    {
+      "id": 1,
+      "name": "Adidas Samba",
+      "price": "100.00$",
+      "image": "images/adidas-samba.png"
+    },
+    {
+      "id": 2,
+      "name": "Air Jordan 1 Reverse Shattered Backboard",
+      "price": "250.00$",
+      "image": "images/shattered-backboard-1.png"
+    },
+    {
+      "id": 3,
+      "name": "Air Jordan 4 KAWS",
+      "price": "300.00$",
+      "image": "images/kaws4.png"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "locations": [
+    {
+      "link": "https://maps.app.goo.gl/XKH5XCvoAphFsHGd8",
+      "shopName": "IBU KICKS",
+      "location": "Francuske revolucije bb, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/cD9iCdBVHY2ohRMG9",
+      "shopName": "BUZZ Sneakers BBI",
+      "location": "Trg djece Sarajeva 1, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/qe6Fo8gFf3AQo6YGA",
+      "shopName": "BUZZ Sneakers SCC",
+      "location": "Vrbanja 1, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/XemrovNG3JKNukr57",
+      "shopName": "BUZZ Sneakers",
+      "location": "Ferhadija 14, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/D7ZpsiPVJYrG94yF7",
+      "shopName": "Sport Vision Ferhadija",
+      "location": "Ferhadija 14, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/3DRxF4sGo7edrUBw9",
+      "shopName": "Sport Vision SCC",
+      "location": "Vrbanja 1, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/hXvt5wJRtJEyPk2A9",
+      "shopName": "Sport Vision Outlet Extreme",
+      "location": "Magistralni put M18, 71000"
+    },
+    {
+      "link": "https://maps.app.goo.gl/zVrvfBozbxEwZtdk7",
+      "shopName": "Sport Vision Grand Centar",
+      "location": "Butmirska cesta 14, 71210"
+    }
+  ]
+}

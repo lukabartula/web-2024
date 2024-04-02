@@ -7,6 +7,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>    
+
     <meta
       name="description"
       content="Site for reserving pairs of shoes to be picked up at the store and paid for."
@@ -17,8 +21,6 @@
 
     <link rel="shortcut icon" href="images/jordan1-icon.png" />
 
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/custom.js"></script>
 
     <!-- Bootstrap CSS -->
 
@@ -34,7 +36,10 @@
     />
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/spapp.css" rel="stylesheet" />
 
+    
+    <script src="js/tiny-slider.js"></script>
     <title>SoleSecure</title>
   </head>
 
@@ -62,13 +67,13 @@
 
         <div class="collapse navbar-collapse" id="navbarsFurni">
           <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li><a class="nav-link" href="#stock">In stock</a></li>
-            <li><a class="nav-link" href="#about">About us</a></li>
-            <li><a class="nav-link" href="#services">Services</a></li>
-            <li><a class="nav-link" href="#locations">Locations</a></li>
+            </li class="nav-item">
+            <li class="nav-item"><a class="nav-link" href="#stock">In stock</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
 
             <li><a class="nav-link" href="#contact">Contact us</a></li>
             <li><a class="nav-link" href="#login">Login</a></li>
@@ -95,6 +100,7 @@
       <section id="contact" data-load="contact.html"></section>
       <section id="login" data-load="login.html"></section>
       <section id="account" data-load="account.html"></section>
+      <section id="product" data-load="product.html"></section>
     </main>
 
     <!-- Start Footer Section -->
@@ -143,6 +149,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.spapp.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
     <script>
       var app = $.spapp({
         defaultView: "#home",
@@ -151,5 +159,29 @@
 
       app.run();
     </script>
-  </body>
-</html>
+    <script>
+      $(document).ready(function () {
+        $(".navbar-nav .nav-link").on("click", function () {
+          // Remove 'active' class from all nav items
+          $(".nav-item").removeClass("active");
+
+          // Add 'active' class to the parent nav item of the clicked element
+          $(this).closest(".nav-item").addClass("active");
+        });
+      });
+
+      $(window).on("hashchange", function () {
+        var hash = window.location.hash;
+
+        // Remove 'active' class from all nav items
+        $(".nav-item").removeClass("active");
+
+        // Add 'active' class to the nav item that corresponds to the new hash
+        $('.nav-item a[href="' + hash + '"]')
+          .parent()
+          .addClass("active");
+      });
+
+      // Trigger the hashchange event when the page loads, to highlight the correct nav item
+      $(window).trigger("hashchange");
+    </script>

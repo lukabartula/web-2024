@@ -1,0 +1,28 @@
+{
+  "team": [
+    {
+      "image": "images/person_1.jpg",
+      "name": "Edhem Rogo",
+      "position": "Manager, BUZZ Sneakers SCC",
+      "statement": "Our sneaker reservation website has been a game-changer for our customers. The positive feedback is a testament to the hard work our team has put into creating a seamless and efficient platform. We're thrilled to see users enjoying the experience and successfully reserving their favorite sneakers."
+    },
+    {
+      "image": "images/person_2.jpg",
+      "name": "Salih Rogo",
+      "position": "Customer support",
+      "statement": "As part of the customer support team, it's rewarding to hear users praising the website's user-friendly design and smooth reservation process. We've received minimal complaints, and when issues arise, we're able to assist customers promptly. The positive reviews reflect our commitment to providing excellent support and ensuring a positive customer experience."
+    },
+    {
+      "image": "images/person_3.jpg",
+      "name": "Luka Bartula",
+      "position": "Sales associate",
+      "statement": "The website's impact on sales has been phenomenal. Customers appreciate the convenience of reserving sneakers online, and it's evident in the increased demand. The system has allowed us to better manage releases, ensuring a fair and organized process. Exciting to be part of a team that's enhancing the shopping experience for sneaker enthusiasts."
+    },
+    {
+      "image": "images/person_4.jpg",
+      "name": "Kathryn Ryan",
+      "position": "CEO, Founder, Atty.",
+      "statement": "It has been an honor leading this company from the very begining. We've been here thoough the highs and lows. I have no doubt that this company will thrive in the years to come."
+    }
+  ]
+}
