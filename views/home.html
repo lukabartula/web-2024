@@ -19,7 +19,7 @@
       </div>
       <div class="col-lg-7">
         <div class="hero-img-wrap">
-          <img src="images/jordan4invert.png" class="img-fluid" />
+          <img src="images/jordan4invert.png" />
         </div>
       </div>
     </div>
@@ -41,43 +41,24 @@
       </div>
       <!-- End Column 1 -->
 
-      <!-- Start Column 2 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-        <a class="product-item" href="cart.html">
-          <img
-            src="images/adidas-samba.png"
-            class="img-fluid product-thumbnail"
-          />
-          <h3 class="product-title">Adidas Samba</h3>
-          <strong class="product-price">$100.00</strong>
-        </a>
-      </div>
-      <!-- End Column 2 -->
+      <div class="col-lg-9">
+        <div class="row sneaker-row">
+          <!-- Start Column 2 -->
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+            >
+            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0"></div>
+          </div>
+          <!-- End Column 2 -->
 
-      <!-- Start Column 3 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-        <a class="product-item" href="cart.html">
-          <img
-            src="images/shattered-backboard-1.png"
-            class="img-fluid product-thumbnail"
-          />
-          <h3 class="product-title">
-            Air Jordan 1 Reverse Shattered backboard
-          </h3>
-          <strong class="product-price">$250.00</strong>
-        </a>
-      </div>
-      <!-- End Column 3 -->
+          <!-- Start Column 3 -->
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0"></div>
+          <!--End Column 3 -->
 
-      <!-- Start Column 4 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-        <a class="product-item" href="cart.html">
-          <img src="images/kaws4.png" class="img-fluid product-thumbnail" />
-          <h3 class="product-title">Air Jordan 4 KAWS</h3>
-          <strong class="product-price">$300.00</strong>
-        </a>
+          <!-- Start Column 4 -->
+          <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0"></div>
+          <!--End Column 4 -->
+        </div>
       </div>
-      <!-- End Column 4 -->
     </div>
   </div>
 </div>
@@ -178,50 +159,59 @@
   <h2 id="popular-prod-h">Popular products</h2>
   <div class="container">
     <p>You might be interested in:</p>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="product-item-sm d-flex">
-          <div class="thumbnail">
-            <img
-              src="images/ultraboost-got-manja.png"
-              alt="Image"
-              class="img-fluid"
-            />
-          </div>
-          <div class="pt-3">
-            <h3>Adidas Ultraboost 4.0 x Game of Thrones House Stark</h3>
+    <div class="row popular-prod-sneakers">
+      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0"></div>
 
-            <p><a href="#">Go to item</a></p>
-          </div>
-        </div>
-      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0"></div>
 
-      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="product-item-sm d-flex">
-          <div class="thumbnail">
-            <img src="images/nike-dunk.png" alt="Image" class="img-fluid" />
-          </div>
-          <div class="pt-3">
-            <h3>Nike Dunk Low</h3>
-
-            <p><a href="#">Go to item</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-        <div class="product-item-sm d-flex">
-          <div class="thumbnail">
-            <img src="images/adidas-nmd.png" alt="Image" class="img-fluid" />
-          </div>
-          <div class="pt-3">
-            <h3>Adidas NMD R1 Tricolor</h3>
-
-            <p><a href="#">Go to item</a></p>
-          </div>
-        </div>
-      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0"></div>
     </div>
   </div>
 </div>
 <!-- End Popular Product -->
+
+<script>
+  fetch("json/homeShoes1.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let sneakerRow = document.querySelector(".sneaker-row");
+      sneakerRow.innerHTML = ""; // Clear the existing content
+      data.homeShoes1.forEach((product) => {
+        let productItem = document.createElement("div");
+        productItem.className = "col-12 col-md-4 col-lg-4 mb-5 mb-md-0";
+        productItem.innerHTML = `
+          <a class="product-item" href="#">
+            <img src="${product.image}" class="img-fluid product-thumbnail" />
+            <h3 class="product-title">${product.name}</h3>
+            <strong class="product-price">${product.price}</strong>
+          </a>
+        `;
+        sneakerRow.appendChild(productItem);
+      });
+    });
+</script>
+
+<script>
+  fetch("json/popularProducts.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let row = document.querySelector(".popular-prod-sneakers");
+      row.innerHTML = ""; // Clear the existing content
+      data.popularProducts.forEach((product) => {
+        let productItem = document.createElement("div");
+        productItem.className = "col-12 col-md-6 col-lg-4 mb-4 mb-lg-0";
+        productItem.innerHTML = `
+          <div class="product-item-sm d-flex">
+            <div class="thumbnail">
+              <img src="${product.image}" alt="Image" class="img-fluid" />
+            </div>
+            <div class="pt-3">
+              <h3>${product.name}</h3>
+              <p><a href="#">Go to item</a></p>
+            </div>
+          </div>
+        `;
+        row.appendChild(productItem);
+      });
+    });
+</script>

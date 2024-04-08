@@ -1,0 +1,19 @@
+{
+  "popularProducts": [
+    {
+      "id": "1",
+      "name": "Adidas Ultraboost 4.0 x Game of Thrones House Stark",
+      "image": "images/ultraboost-got-manja.png"
+    },
+    {
+      "id": "2",
+      "name": "Nike Dunk Low",
+      "image": "images/nike-dunk.png"
+    },
+    {
+      "id": "3",
+      "name": "Adidas NMD R1 Tricolor",
+      "image": "images/adidas-nmd.png"
+    }
+  ]
+}

@@ -83,31 +83,23 @@
               </div>
 
               <form>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="fname">First name</label>
-                      <input type="text" class="form-control" id="fname">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="lname">Last name</label>
-                      <input type="text" class="form-control" id="lname">
-                    </div>
-                  </div>
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstName" required>
                 </div>
                 <div class="form-group">
-                  <label class="text-black" for="email">Email address</label>
-                  <input type="email" class="form-control" id="email">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" required>
                 </div>
-
-                <div class="form-group mb-5">
-                  <label class="text-black" for="message">Message</label>
-                  <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" required>
                 </div>
-
-                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
 
             </div>
@@ -124,6 +116,20 @@
 
   <!-- End Contact Form -->
 
-		
+	
 
-		
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+  
+      let firstName = document.querySelector('#firstName').value;
+      let lastName = document.querySelector('#lastName').value;
+      let email = document.querySelector('#email').value;
+      let message = document.querySelector('#message').value;
+  
+      console.log('First Name:', firstName);
+      console.log('Last Name:', lastName);
+      console.log('Email:', email);
+      console.log('Message:', message);
+    });
+  </script> 

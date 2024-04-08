@@ -25,150 +25,60 @@
 
 <div class="untree_co-section product-section before-footer-section">
   <div class="container">
-    <div class="row">
+    <div class="row locations">
       <!-- Start Column 1 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/XKH5XCvoAphFsHGd8"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">IBU KICKS</h3>
-          <strong class="product-price">Francuske revolucije bb, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 1 -->
 
       <!-- Start Column 2 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/cD9iCdBVHY2ohRMG9"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">BUZZ Sneakers BBI</h3>
-          <strong class="product-price">Trg djece Sarajeva 1, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 2 -->
 
       <!-- Start Column 3 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/qe6Fo8gFf3AQo6YGA"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">BUZZ Sneakers SCC</h3>
-          <strong class="product-price">Vrbanja 1, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 3 -->
 
       <!-- Start Column 4 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/XemrovNG3JKNukr57"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">BUZZ Sneakers</h3>
-          <strong class="product-price">Ferhadija 14, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 4 -->
 
       <!-- Start Column 1 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/D7ZpsiPVJYrG94yF7"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">Sport Vision Ferhadija</h3>
-          <strong class="product-price">Ferhadija 14, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 1 -->
 
       <!-- Start Column 2 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/3DRxF4sGo7edrUBw9"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">Sport Vision SCC</h3>
-          <strong class="product-price">Vrbanja 1, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 2 -->
 
       <!-- Start Column 3 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/hXvt5wJRtJEyPk2A9"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">Sport Vision Outlet Extreme</h3>
-          <strong class="product-price">Magistralni put M18, 71000</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 3 -->
 
       <!-- Start Column 4 -->
-      <div class="col-12 col-md-4 col-lg-3 mb-5">
-        <a
-          class="product-item"
-          href="https://maps.app.goo.gl/zVrvfBozbxEwZtdk7"
-          target="_blank"
-        >
-          <img
-            class="img-in-location"
-            src="images/location-ping.png"
-            alt="blabla"
-          />
-          <h3 class="product-title">Sport Vision Grand Centar</h3>
-          <strong class="product-price">Butmirska cesta 14, 71210</strong>
-        </a>
-      </div>
+      <div class="col-12 col-md-4 col-lg-3 mb-5"></div>
       <!-- End Column 4 -->
     </div>
   </div>
 </div>
+
+<script>
+  fetch("json/locations.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let container = document.querySelector(".row.locations"); // Replace with the actual row selector
+      container.innerHTML = ""; // Clear the existing content
+      data.locations.forEach((location) => {
+        let locationItem = document.createElement("div");
+        locationItem.className = "col-12 col-md-4 col-lg-3 mb-5"; // Replace with the actual class name
+        locationItem.innerHTML = `
+        <a class="product-item" href="${location.link}" target="_blank">
+          <img class="img-fluid product-thumbnail" src="images/location-ping.png" alt="blabla" />
+          <h3 class="product-title">${location.shopName}</h3>
+          <strong class="product-price">${location.location}</strong>
+        </a>
+      `;
+        container.appendChild(locationItem);
+      });
+    })
+    .catch((error) => console.error("Error:", error));
+</script>

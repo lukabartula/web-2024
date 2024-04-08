@@ -98,7 +98,7 @@
         <div class="container">
           <div class="row">
             <!-- Start Column 1 -->
-            <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+            <div class="col-md-3">
               <h2 class="mb-4 section-title">Dive in.</h2>
               <p class="mb-4">Make sure your dream kicks are yours.</p>
               <p><a href="stock.html" class="btn">Explore</a></p>
@@ -106,43 +106,20 @@
             <!-- End Column 1 -->
 
             <!-- Start Column 2 -->
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-              <a class="product-item" href="#">
-                <img
-                  src="images/blazers.png"
-                  class="img-fluid product-thumbnail"
-                />
-                <h3 class="product-title">Nordic Chair</h3>
-                <strong class="product-price">$50.00</strong>
-              </a>
+            <div class="col-md-9">
+              <div class="row servicePageShoes">
+                <div class="col-md-4 mb-5 mb-md-0">
+                  <!-- Content for first sub-column goes here -->
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                  <!-- Content for second sub-column goes here -->
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                  <!-- Content for third sub-column goes here -->
+                </div>
+              </div>
             </div>
             <!-- End Column 2 -->
-
-            <!-- Start Column 3 -->
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-              <a class="product-item" href="#">
-                <img
-                  src="images/bapesta.png"
-                  class="img-fluid product-thumbnail"
-                />
-                <h3 class="product-title">Bape Sta College Dropout</h3>
-                <strong class="product-price">$480.00</strong>
-              </a>
-            </div>
-            <!-- End Column 3 -->
-
-            <!-- Start Column 4 -->
-            <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-              <a class="product-item" href="#">
-                <img
-                  src="images/bred11.png"
-                  class="img-fluid product-thumbnail"
-                />
-                <h3 class="product-title">Air Jordan 11 Bred</h3>
-                <strong class="product-price">$243.00</strong>
-              </a>
-            </div>
-            <!-- End Column 4 -->
           </div>
         </div>
       </div>
@@ -150,3 +127,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  fetch("json/servicePageShoes.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let container = document.querySelector(".row.servicePageShoes"); // Replace with the actual row selector
+      container.innerHTML = ""; // Clear the existing content
+      data.servicePageShoes.forEach((shoe) => {
+        let shoeItem = document.createElement("div");
+        shoeItem.className = "col-md-4 mb-5 mb-md-0"; // Replace with the actual class name
+        shoeItem.innerHTML = `
+          <a class="product-item" href="#">
+            <img class="img-fluid product-thumbnail" src="${shoe.image}" alt="${shoe.name}" />
+            <h3 class="product-title">${shoe.name}</h3>
+            <strong class="product-price">${shoe.price}</strong>
+          </a>
+        `;
+        container.appendChild(shoeItem);
+      });
+    })
+    .catch((error) => console.error("Error:", error));
+</script>

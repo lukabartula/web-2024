@@ -18,6 +18,48 @@ body {
   font-size: 14px;
   background-color: #eff2f1;
 }
+label {
+  font-weight: bold;
+  color: #d6d6d6;
+}
+form {
+  display: grid;
+  gap: 15px;
+}
+.login-header {
+  text-align: center;
+  color: #ffffff;
+}
+.update-btn {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.update-btn:hover {
+  background-color: #d7e0e4;
+}
+
+.container-login {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #697799;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -178,6 +220,10 @@ a.more {
   max-width: 780px;
   left: -20px;
 }
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
 @media (min-width: 768px) {
   .hero .hero-img-wrap img {
     right: 0px;
@@ -276,8 +322,8 @@ a.more {
   position: relative;
   padding-bottom: 50px;
   cursor: pointer;
-  height: 300px; /*ako zatreba igraj se s ovim da sve bude ok na stock.html*/
-  width: 300px;
+
+  /*height: 300px;  ako zatreba igraj se s ovim da sve bude ok na stock.html*/
 }
 .product-section .product-item .product-thumbnail {
   margin-bottom: 30px;
@@ -529,6 +575,23 @@ a.more {
     display: block;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .product-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-img-wrap img {
+    width: 100%;
+    align-content: center;
+  }
+
+  .product-section .product-item {
+    flex: 0 0 33.33%; /* For 2 items per row, change to 33.33% for 3 items per row */
+    max-width: 33.33%; /* For 2 items per row, change to 33.33% for 3 items per row */
+  }
+}
+
 .testimonial-slider-wrap #testimonial-nav > span {
   cursor: pointer;
   position: absolute;
