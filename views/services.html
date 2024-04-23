@@ -15,7 +15,7 @@
             go-to destination for sneaker enthusiasts.
           </p>
           <p>
-            <a href="stock.html" class="btn btn-white-outline">Explore</a>
+            <a href="#stock" class="btn btn-white-outline">Explore</a>
           </p>
         </div>
       </div>
@@ -127,25 +127,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  fetch("json/servicePageShoes.json")
-    .then((response) => response.json())
-    .then((data) => {
-      let container = document.querySelector(".row.servicePageShoes"); // Replace with the actual row selector
-      container.innerHTML = ""; // Clear the existing content
-      data.servicePageShoes.forEach((shoe) => {
-        let shoeItem = document.createElement("div");
-        shoeItem.className = "col-md-4 mb-5 mb-md-0"; // Replace with the actual class name
-        shoeItem.innerHTML = `
-          <a class="product-item" href="#">
-            <img class="img-fluid product-thumbnail" src="${shoe.image}" alt="${shoe.name}" />
-            <h3 class="product-title">${shoe.name}</h3>
-            <strong class="product-price">${shoe.price}</strong>
-          </a>
-        `;
-        container.appendChild(shoeItem);
-      });
-    })
-    .catch((error) => console.error("Error:", error));
-</script>

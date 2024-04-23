@@ -1,19 +1,25 @@
 {
   "servicePageShoes": [
     {
+      "id": "1",
       "image": "images/blazers.png",
       "name": "Nike Blazers",
-      "price": "$120.00"
+      "price": "$120.00",
+      "sizes": ["7", "8", "9", "10", "11", "12"]
     },
     {
+      "id": "2",
       "image": "images/bapesta.png",
       "name": "Bape Sta College Dropout",
-      "price": "$480.00"
+      "price": "$480.00",
+      "sizes": ["7", "8", "9", "10", "11"]
     },
     {
+      "id": "3",
       "image": "images/bred11.png",
       "name": "Air Jordan 11 Bred",
-      "price": "$243.00"
+      "price": "$243.00",
+      "sizes": ["7", "8", "9", "11", "12"]
     }
   ]
 }

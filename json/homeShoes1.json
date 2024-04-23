@@ -4,19 +4,22 @@
       "id": 1,
       "name": "Adidas Samba",
       "price": "100.00$",
-      "image": "images/adidas-samba.png"
+      "image": "images/adidas-samba.png",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": 2,
       "name": "Air Jordan 1 Reverse Shattered Backboard",
       "price": "250.00$",
-      "image": "images/shattered-backboard-1.png"
+      "image": "images/shattered-backboard-1.png",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": 3,
       "name": "Air Jordan 4 KAWS",
       "price": "300.00$",
-      "image": "images/kaws4.png"
+      "image": "images/kaws4.png",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     }
   ]
 }
