@@ -187,6 +187,76 @@
           </a>
         `;
         sneakerRow.appendChild(productItem);
+
+        // Add click event listener to each product item
+        productItem
+          .querySelector(".product-item")
+          .addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Set modal content based on the clicked product
+
+            document.getElementById("sizes").innerHTML = "";
+            product.sizes.forEach((size) => {
+              let li = document.createElement("li");
+              li.textContent = size;
+              document.getElementById("sizes").appendChild(li);
+            });
+            document.getElementById("modalProductTitle").innerText =
+              product.name;
+            document.getElementById("modalProductImage").src = product.image;
+            document.getElementById("modalProductPrice").innerText =
+              product.price;
+
+            // Open the modal
+            document.getElementById("myModal").style.display = "block";
+
+            document.getElementById("modalProductTitle").innerText =
+              product.name;
+            document.getElementById("modalProductImage").src = product.image;
+            document.getElementById("modalProductPrice").innerText =
+              product.price;
+
+            // Open the modal
+            document.getElementById("myModal").style.display = "block";
+          });
+
+        // Add click event listener to each product item
+        productItem
+          .querySelector(".product-item")
+          .addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Set modal content based on the clicked product
+
+            // Clear previous content
+            document.getElementById("sizes").innerHTML = "";
+            document.getElementById("reserve-button").style.display = "none";
+            document.getElementById("reserved-message").style.display = "none";
+
+            // Populate the sizes container with buttons for each size
+            product.sizes.forEach((size) => {
+              let button = document.createElement("button");
+              button.textContent = size;
+              button.className = "size-button";
+              button.addEventListener("click", function () {
+                // Highlight the selected size
+                document.querySelectorAll(".size-button").forEach((btn) => {
+                  btn.classList.remove("selected");
+                });
+                button.classList.add("selected");
+
+                //Show the reserve button res for short mrsko mi bilo tipkat
+                let res = document.getElementById("reserve-button");
+                res.addEventListener("click", function () {
+                  document.getElementById("reserved-message").style.display =
+                    "block";
+                });
+
+                document.getElementById("reserve-button").style.display =
+                  "block";
+              });
+              document.getElementById("sizes").appendChild(button);
+            });
+          });
       });
     });
 </script>

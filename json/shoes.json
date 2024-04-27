@@ -1,52 +1,60 @@
 {
-  "stock": [
+  "shoes": [
     {
       "id": "1",
       "name": "Air Jordan 4 KAWS",
       "image": "images/kaws4.png",
-      "price": "$300.00"
+      "price": "$300.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "2",
       "name": "Adidas Samba",
       "image": "images/adidas-samba.png",
-      "price": "$100.00"
+      "price": "$100.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "3",
       "name": "Air Force 1 Travis Scott",
       "image": "images/travis-af1.png",
-      "price": "$270.00"
+      "price": "$270.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "4",
       "name": "Air Jordan 1 \"Reverse Shattered Backboard\"",
       "image": "images/shattered-backboard-1.png",
-      "price": "$250.00"
+      "price": "$250.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "5",
       "name": "Nike Blazer Mid",
       "image": "images/blazers.png",
-      "price": "$150.00"
+      "price": "$150.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "6",
       "name": "Bape Sta College Dropout",
       "image": "images/bapesta.png",
-      "price": "$480.00"
+      "price": "$480.00",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "7",
       "name": "Yeezy 350 v2",
       "image": "images/yzy350v2.png",
-      "price": "$378.00"
+      "price": "$378.00",
+      "sizes": ["7", "8", "9", "11.5", "12"]
     },
     {
       "id": "8",
       "name": "Air Jordan 11 Bred",
       "image": "images/bred11.png",
-      "price": "$243.00"
+      "price": "$243.00",
+      "sizes": ["10", "11", "12.5"]
     }
   ]
 }

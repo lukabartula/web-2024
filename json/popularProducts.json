@@ -3,17 +3,23 @@
     {
       "id": "1",
       "name": "Adidas Ultraboost 4.0 x Game of Thrones House Stark",
-      "image": "images/ultraboost-got-manja.png"
+      "image": "images/ultraboost-got-manja.png",
+      "price": "$180",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "2",
       "name": "Nike Dunk Low",
-      "image": "images/nike-dunk.png"
+      "price": "$100",
+      "image": "images/nike-dunk.png",
+      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
     },
     {
       "id": "3",
       "name": "Adidas NMD R1 Tricolor",
-      "image": "images/adidas-nmd.png"
+      "price": "$130",
+      "image": "images/adidas-nmd.png",
+      "sizes": ["7", "8", "9", "11.5", "12"]
     }
   ]
 }

@@ -8,8 +8,6 @@
     />
 
 
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/custom.js"></script>    
 
     <meta
       name="description"
@@ -39,7 +37,6 @@
     <link href="css/spapp.css" rel="stylesheet" />
 
     
-    <script src="js/tiny-slider.js"></script>
     <title>SoleSecure</title>
   </head>
 
@@ -91,6 +88,26 @@
     </nav>
     <!-- End Header/Navigation -->
 
+
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalProductTitle" class="product-title"></h3>
+    <img id="modalProductImage" class="img-fluid product-thumbnail" />
+    <strong id="modalProductPrice" class="product-price"></strong>
+    <p>Reserve your size now!</p>
+    <ul id="sizes"></ul>
+    <button id="reserve-button">Reserve</button>
+    <div id="reserved-message">
+      <p>Product reserved!</p>
+    </div>
+
+    <!-- You can add any other content here -->
+  </div>
+</div>
+
     <main id="spapp" role="main">
       <section id="home" data-load="home.html"></section>
       <section id="stock" data-load="stock.html"></section>
@@ -101,6 +118,7 @@
       <section id="login" data-load="login.html"></section>
       <section id="account" data-load="account.html"></section>
       <section id="product" data-load="product.html"></section>
+      <section id="cart" data-load="cart.html"></section>
     </main>
 
     <!-- Start Footer Section -->
@@ -146,42 +164,50 @@
     </footer>
     <!-- End Footer Section -->
 
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>   
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.spapp.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tiny-slider.js"></script>
-    <script src="js/custom.js"></script>
-    <script>
-      var app = $.spapp({
-        defaultView: "#home",
-        templateDir: "./views/",
-      });
 
-      app.run();
-    </script>
-    <script>
-      $(document).ready(function () {
-        $(".navbar-nav .nav-link").on("click", function () {
-          // Remove 'active' class from all nav items
-          $(".nav-item").removeClass("active");
+<script>
 
-          // Add 'active' class to the parent nav item of the clicked element
-          $(this).closest(".nav-item").addClass("active");
-        });
-      });
+// Add active class to the current nav item (highlight it)
+$(document).ready(function () {
+  $(".navbar-nav .nav-link").on("click", function () {
+    // Remove 'active' class from all nav items
+    $(".nav-item").removeClass("active");
 
-      $(window).on("hashchange", function () {
-        var hash = window.location.hash;
+    // Add 'active' class to the parent nav item of the clicked element
+    $(this).closest(".nav-item").addClass("active");
+  });
+});
 
-        // Remove 'active' class from all nav items
-        $(".nav-item").removeClass("active");
+$(window).on("hashchange", function () {
+  var hash = window.location.hash;
 
-        // Add 'active' class to the nav item that corresponds to the new hash
-        $('.nav-item a[href="' + hash + '"]')
-          .parent()
-          .addClass("active");
-      });
+  // Remove 'active' class from all nav items
+  $(".nav-item").removeClass("active");
 
-      // Trigger the hashchange event when the page loads, to highlight the correct nav item
-      $(window).trigger("hashchange");
-    </script>
+  // Add 'active' class to the nav item that corresponds to the new hash
+  $('.nav-item a[href="' + hash + '"]')
+    .parent()
+    .addClass("active");
+});
+
+// Trigger the hashchange event when the page loads, to highlight the correct nav item
+$(window).trigger("hashchange");
+
+
+
+// Close modal when clicking on the close button or outside the modal
+document.querySelector(".close").addEventListener("click", function () {
+  document.getElementById("myModal").style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("myModal")) {
+    document.getElementById("myModal").style.display = "none";
+  }
+});
+</script>
