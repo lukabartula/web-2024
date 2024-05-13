@@ -5,7 +5,7 @@
       "name": "Air Jordan 4 KAWS",
       "image": "images/kaws4.png",
       "price": "$300.00",
-      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
+      "sizes": ["7", "8", "9", "10", "11", "12"]
     },
     {
       "id": "2",
@@ -19,28 +19,28 @@
       "name": "Air Force 1 Travis Scott",
       "image": "images/travis-af1.png",
       "price": "$270.00",
-      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
+      "sizes": ["7", "8", "9", "9.5", "11.5"]
     },
     {
       "id": "4",
       "name": "Air Jordan 1 \"Reverse Shattered Backboard\"",
       "image": "images/shattered-backboard-1.png",
       "price": "$250.00",
-      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
+      "sizes": ["7", "10", "11", "11.5", "12", "12.5"]
     },
     {
       "id": "5",
       "name": "Nike Blazer Mid",
       "image": "images/blazers.png",
       "price": "$150.00",
-      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
+      "sizes": ["10", "10.5", "11", "11.5", "12"]
     },
     {
       "id": "6",
       "name": "Bape Sta College Dropout",
       "image": "images/bapesta.png",
       "price": "$480.00",
-      "sizes": ["7", "8", "9", "10", "11", "11.5", "12"]
+      "sizes": ["7", "8", "8.5", "9", "11", "12"]
     },
     {
       "id": "7",

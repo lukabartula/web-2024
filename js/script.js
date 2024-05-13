@@ -19,7 +19,8 @@ app.route({
   load: "home.html",
   onCreate: function () {},
   onReady: function () {
-    fetchShoesHome();
+    fetchHomeShoes1();
+    fetchPopularProducts();
   },
 });
 
@@ -29,14 +30,6 @@ app.route({
   onCreate: function () {},
   onReady: function () {
     fetchTeam();
-  },
-});
-
-app.route({
-  view: "about",
-  load: "about.html",
-  onCreate: function () {},
-  onReady: function () {
     fetchReviews();
   },
 });
@@ -51,83 +44,40 @@ app.route({
 });
 
 app.route({
-  view: "location",
-  load: "location.html",
+  view: "locations",
+  load: "locations.html",
   onCreate: function () {},
   onReady: function () {
     fetchLocations();
   },
 });
 
-function fetchShoes() {
-  fetch("json/shoes.json")
+function fetchPopularProducts() {
+  fetch("json/popularProducts.json")
     .then((response) => response.json())
     .then((data) => {
-      let container = document.querySelector(".row.in-stock");
-      container.innerHTML = ""; // Clear the existing content
-      data.shoes.forEach((product) => {
+      let row = document.querySelector(".popular-prod-sneakers");
+      row.innerHTML = ""; // Clear the existing content
+      data.popularProducts.forEach((product) => {
         let productItem = document.createElement("div");
-        productItem.className = "col-12 col-md-4 col-lg-3 mb-5";
+        productItem.className = "col-12 col-md-6 col-lg-4 mb-4 mb-lg-0";
         productItem.innerHTML = `
-            <a class="product-item" href="#">
-              <img src="${product.image}" class="img-fluid product-thumbnail" />
-              <h3 class="product-title">${product.name}</h3>
-              <strong class="product-price">${product.price}</strong>
-            </a>
-          `;
-        container.appendChild(productItem);
-
-        // Add click event listener to each product item
-        productItem
-          .querySelector(".product-item")
-          .addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent default link behavior
-
-            // Clear previous content
-            document.getElementById("sizes").innerHTML = "";
-            document.getElementById("reserve-button").style.display = "none";
-            document.getElementById("reserved-message").style.display = "none";
-
-            // Set modal content based on the clicked product
-            document.getElementById("modalProductTitle").innerText =
-              product.name;
-            document.getElementById("modalProductImage").src = product.image;
-            document.getElementById("modalProductPrice").innerText =
-              product.price;
-
-            // Open the modal
-            document.getElementById("myModal").style.display = "block";
-
-            // Populate the sizes container with buttons for each size
-            product.sizes.forEach((size) => {
-              let button = document.createElement("button");
-              button.textContent = size;
-              button.className = "size-button";
-              button.addEventListener("click", function () {
-                // Highlight the selected size
-                document.querySelectorAll(".size-button").forEach((btn) => {
-                  btn.classList.remove("selected");
-                });
-                button.classList.add("selected");
-
-                // Show the reserve button
-                document.getElementById("reserve-button").style.display =
-                  "block";
-              });
-              document.getElementById("sizes").appendChild(button);
-            });
-          });
-
-        // Add event listener to the reserve button
-        let res = document.getElementById("reserve-button");
-        res.addEventListener("click", function () {
-          document.getElementById("reserved-message").style.display = "block";
-        });
+          <div class="product-item-sm d-flex">
+            <div class="thumbnail">
+              <img src="${product.image}" alt="Image" class="img-fluid" />
+            </div>
+            <div class="pt-3">
+              <h3>${product.name}</h3>
+              <p><a href="#">Go to item</a></p>
+            </div>
+          </div>
+        `;
+        row.appendChild(productItem);
       });
     });
 }
 
-function fetchShoesHome() {
+function fetchHomeShoes1() {
   fetch("json/homeShoes1.json")
     .then((response) => response.json())
     .then((data) => {
@@ -176,8 +126,111 @@ function fetchShoesHome() {
             // Open the modal
             document.getElementById("myModal").style.display = "block";
           });
+
+        // Add click event listener to each product item
+        productItem
+          .querySelector(".product-item")
+          .addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Set modal content based on the clicked product
+
+            // Clear previous content
+            document.getElementById("sizes").innerHTML = "";
+            document.getElementById("reserve-button").style.display = "none";
+            document.getElementById("reserved-message").style.display = "none";
+
+            // Populate the sizes container with buttons for each size
+            product.sizes.forEach((size) => {
+              let button = document.createElement("button");
+              button.textContent = size;
+              button.className = "size-button";
+              button.addEventListener("click", function () {
+                // Highlight the selected size
+                document.querySelectorAll(".size-button").forEach((btn) => {
+                  btn.classList.remove("selected");
+                });
+                button.classList.add("selected");
+
+                //Show the reserve button res for short mrsko mi bilo tipkat
+                let res = document.getElementById("reserve-button");
+                res.addEventListener("click", function () {
+                  document.getElementById("reserved-message").style.display =
+                    "block";
+                });
+
+                document.getElementById("reserve-button").style.display =
+                  "block";
+              });
+              document.getElementById("sizes").appendChild(button);
+            });
+          });
       });
     });
+}
+
+function fetchShoes() {
+  RestClient.get("get_sneakers.php", function (data) {
+    console.log("Rest client data: ", data);
+    const container = document.querySelector(".row.in-stock");
+    container.innerHTML = ""; // Clear the existing content
+    data.forEach((product) => {
+      const productItem = document.createElement("div");
+      productItem.className = "col-12 col-md-4 col-lg-3 mb-5";
+      productItem.innerHTML = `
+            <a class="product-item" href="#">
+              <img src="${product.image}" class="img-fluid product-thumbnail" />
+              <h3 class="product-title">${product.name}</h3>
+              <strong class="product-price">${product.price}</strong>
+            </a>
+          `;
+      container.appendChild(productItem);
+
+      // Add click event listener to each product item
+      productItem
+        .querySelector(".product-item")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link behavior
+
+          // Clear previous content
+          document.getElementById("sizes").innerHTML = "";
+          document.getElementById("reserve-button").style.display = "none";
+          document.getElementById("reserved-message").style.display = "none";
+
+          // Set modal content based on the clicked product
+          document.getElementById("modalProductTitle").innerText = product.name;
+          document.getElementById("modalProductImage").src = product.image;
+          document.getElementById("modalProductPrice").innerText =
+            product.price;
+
+          // Open the modal
+          document.getElementById("myModal").style.display = "block";
+
+          // Populate the sizes container with buttons for each size
+          product.sizes.forEach((size) => {
+            let button = document.createElement("button");
+            button.textContent = size;
+            button.className = "size-button";
+            button.addEventListener("click", function () {
+              // Highlight the selected size
+              document.querySelectorAll(".size-button").forEach((btn) => {
+                btn.classList.remove("selected");
+              });
+              button.classList.add("selected");
+
+              // Show the reserve button
+              document.getElementById("reserve-button").style.display = "block";
+            });
+            document.getElementById("sizes").appendChild(button);
+          });
+        });
+
+      // Add event listener to the reserve button
+      let res = document.getElementById("reserve-button");
+      res.addEventListener("click", function () {
+        document.getElementById("reserved-message").style.display = "block";
+      });
+    });
+  });
 }
 
 function changeActiveClass() {
@@ -228,46 +281,46 @@ function fetchTeam() {
 }
 
 function fetchReviews() {
-  fetch("json/reviews.json")
-    .then((response) => response.json())
-    .then((data) => {
-      let slider = document.querySelector(".testimonial-slider");
-      slider.innerHTML = ""; // Clear the existing content
-      data.reviews.forEach((review) => {
-        let reviewItem = document.createElement("div");
-        reviewItem.className = "item";
-        reviewItem.innerHTML = `
+  RestClient.get("get_reviews.php", function (data) {
+    console.log("Rest client data: ", data);
+
+    let slider = document.querySelector(".testimonial-slider");
+    slider.innerHTML = ""; // Clear the existing content
+    data.forEach((review) => {
+      let reviewItem = document.createElement("div");
+      reviewItem.className = "item";
+      reviewItem.innerHTML = `
           <div class="row justify-content-center">
             <div class="col-lg-8 mx-auto">
               <div class="testimonial-block text-center">
                 <blockquote class="mb-5">
-                  <p>&ldquo;${review.review}&rdquo;</p>
+                  <p>&ldquo;${review.review_text}&rdquo;</p>
                 </blockquote>
                 <div class="author-info">
-                  <h3 class="font-weight-bold">${review.author}</h3>
+                  <h3 class="font-weight-bold">${review.name}</h3>
                   <span class="position d-block mb-3">Customer</span>
                 </div>
               </div>
             </div>
           </div>
         `;
-        slider.appendChild(reviewItem);
-      });
-      // Initialize the slider (tns) here
-      tns({
-        container: ".testimonial-slider",
-        items: 1,
-        slideBy: "page",
-        autoplay: true,
-        controlsContainer: "#testimonial-nav",
-        autoplayButtonOutput: false,
-        nav: false,
-        mouseDrag: true,
-        swipeAngle: false,
-        speed: 400,
-        autoplayTimeout: 5000,
-      });
+      slider.appendChild(reviewItem);
     });
+    // Initialize the slider (tns) here
+    tns({
+      container: ".testimonial-slider",
+      items: 1,
+      slideBy: "page",
+      autoplay: true,
+      controlsContainer: "#testimonial-nav",
+      autoplayButtonOutput: false,
+      nav: false,
+      mouseDrag: true,
+      swipeAngle: false,
+      speed: 400,
+      autoplayTimeout: 5000,
+    });
+  });
 }
 
 //pr
@@ -277,14 +330,14 @@ function fetchServicePageShoes() {
     .then((data) => {
       let container = document.querySelector(".row.servicePageShoes"); // Replace with the actual row selector
       container.innerHTML = ""; // Clear the existing content
-      data.servicePageShoes.forEach((shoe) => {
+      data.servicePageShoes.forEach((product) => {
         let productItem = document.createElement("div");
         productItem.className = "col-md-4 mb-5 mb-md-0"; // Replace with the actual class name
         productItem.innerHTML = `
           <a class="product-item" href="#">
-            <img class="img-fluid product-thumbnail" src="${shoe.image}" alt="${shoe.name}" />
-            <h3 class="product-title">${shoe.name}</h3>
-            <strong class="product-price">${shoe.price}</strong>
+            <img class="img-fluid product-thumbnail" src="${product.image}" alt="${product.name}" />
+            <h3 class="product-title">${product.name}</h3>
+            <strong class="product-price">${product.price}</strong>
           </a>
         `;
         container.appendChild(productItem);
@@ -294,31 +347,40 @@ function fetchServicePageShoes() {
           .querySelector(".product-item")
           .addEventListener("click", function (event) {
             event.preventDefault(); // Prevent default link behavior
-            // Set modal content based on the clicked product
 
+            // Clear previous content
             document.getElementById("sizes").innerHTML = "";
+            document.getElementById("reserve-button").style.display = "none";
+            document.getElementById("reserved-message").style.display = "none";
+
+            // Set modal content based on the clicked product
+            document.getElementById("modalProductTitle").innerText =
+              product.name;
+            document.getElementById("modalProductImage").src = product.image;
+            document.getElementById("modalProductPrice").innerText =
+              product.price;
+
+            // Open the modal
+            document.getElementById("myModal").style.display = "block";
+
+            // Populate the sizes container with buttons for each size
             product.sizes.forEach((size) => {
-              let li = document.createElement("li");
-              li.textContent = size;
-              document.getElementById("sizes").appendChild(li);
+              let button = document.createElement("button");
+              button.textContent = size;
+              button.className = "size-button";
+              button.addEventListener("click", function () {
+                // Highlight the selected size
+                document.querySelectorAll(".size-button").forEach((btn) => {
+                  btn.classList.remove("selected");
+                });
+                button.classList.add("selected");
+
+                // Show the reserve button
+                document.getElementById("reserve-button").style.display =
+                  "block";
+              });
+              document.getElementById("sizes").appendChild(button);
             });
-            document.getElementById("modalProductTitle").innerText =
-              product.name;
-            document.getElementById("modalProductImage").src = product.image;
-            document.getElementById("modalProductPrice").innerText =
-              product.price;
-
-            // Open the modal
-            document.getElementById("myModal").style.display = "block";
-
-            document.getElementById("modalProductTitle").innerText =
-              product.name;
-            document.getElementById("modalProductImage").src = product.image;
-            document.getElementById("modalProductPrice").innerText =
-              product.price;
-
-            // Open the modal
-            document.getElementById("myModal").style.display = "block";
           });
       });
 
