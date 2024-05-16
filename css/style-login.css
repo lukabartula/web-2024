@@ -3,7 +3,7 @@ body {
 }
 .page-content {
   width: 100%;
-  margin: 0 auto;
+  margin-bottom: 0 auto;
   background-color: #004668;
   display: flex;
   display: -webkit-flex;
@@ -243,4 +243,8 @@ body {
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
   }
+}
+
+#lalala {
+  align-items: center;
 }
