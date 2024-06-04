@@ -12,4 +12,8 @@ class ReviewService {
     public function get_reviews(){
         return $this->review_dao->get_reviews();
     }
+
+    public function add_reviews($payload){
+        return $this->review_dao->add_reviews($payload);
+    }
 }

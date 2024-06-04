@@ -13,4 +13,8 @@ class ReviewDao extends BaseDao{
             []
         );
     }
+
+    public function add_reviews($payload){
+        $this->insert("reviews", $payload);
+    }
 }
