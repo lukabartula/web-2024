@@ -8,7 +8,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_DEPRECATED));
 
 class Config {
     public static function DB_NAME(){
-        return Config::get_env("DB_NAME", 'SoleSecure');
+        return Config::get_env("DB_NAME", 'solesecure');
     }
     public static function DB_PORT(){
         return Config::get_env("DB_PORT", 3306);
