@@ -1,8 +1,7 @@
 <?php
 
-//TODO skontaj ovo
 
-require_once __DIR__ . "/../../config.php";
+require_once __DIR__ . "/../config.php";
 
 class BaseDao
 {
@@ -52,26 +51,28 @@ class BaseDao
         return $prepared_statement;
     }
 
-    public function insert($table, $entity)
-    {
+    public function insert($table, $entity) {
+
+    
         $query = "INSERT INTO {$table} (";
-        // INSERT INTO patients (
+        // INSERT INTO users (
         foreach ($entity as $column => $value) {
-            $query .= $column . ", ";
+        $query .= $column . ", ";
         }
-        // INSERT INTO patients (first_name, last_name, 
+        // INSERT INTO users (name, username, email, password,
         $query = substr($query, 0, -2);
-        // INSERT INTO patients (first_name, last_name
+        // INSERT INTO users (name, username, email, password
         $query .= ") VALUES (";
-        // INSERT INTO patients (first_name, last_name) VALUES (
+        // INSERT INTO users (name, username, email, values) VALUES (
         foreach ($entity as $column => $value) {
-            $query .= ":" . $column . ", ";
+        $query .= ":" . $column . ", ";
         }
-        // INSERT INTO patients (first_name, last_name) VALUES (:first_name, :last_name, 
+        // INSERT INTO users (name, username, email, password) VALUES (:name, :username, :email, :password, 
         $query = substr($query, 0, -2);
-        // INSERT INTO patients (first_name, last_name) VALUES (:first_name, :last_name
+        // INSERT INTO users (name, username, email, password) VALUES (:name, :username, :email, :password
         $query .= ")";
-        // INSERT INTO patients (first_name, last_name) VALUES (:first_name, :last_name)
+        // INSERT INTO users (name, username, email, password) VALUES (:name, :username, :email, :password)
+        $query .= ";";
 
         $statement = $this->connection->prepare($query);
         $statement->execute($entity); // SQL injection prevention

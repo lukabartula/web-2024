@@ -169,7 +169,7 @@ function fetchHomeShoes1() {
 }
 
 function fetchShoes() {
-  RestClient.get("get_sneakers.php", function (data) {
+  RestClient.get("sneakers", function (data) {
     console.log("Rest client data: ", data);
     const container = document.querySelector(".row.in-stock");
     container.innerHTML = ""; // Clear the existing content
@@ -281,7 +281,7 @@ function fetchTeam() {
 }
 
 function fetchReviews() {
-  RestClient.get("get_reviews.php", function (data) {
+  RestClient.get("reviews", function (data) {
     console.log("Rest client data: ", data);
 
     let slider = document.querySelector(".testimonial-slider");

@@ -10,7 +10,7 @@
     <script src="../utils/rest_client.js"></script>
     <script src="../utils/constants.js"></script>
 
-    <title>Login</title>
+    <title>Document</title>
   </head>
   <body>
     <div class="form-v8">
@@ -21,13 +21,20 @@
           </div>
           <div class="form-right">
             <div class="tab">
-              <h1 style="padding: 40px">Log in</h1>
+              <h3 style="padding: 40px">Sign up</h3>
             </div>
-
-            <form id="login-form" class="form-detail" action="#" method="post">
-              <div class="tabcontent" id="sign-in">
+            <form id="signup-form" class="form-detail" action="#" method="post">
+              <div class="tabcontent" id="sign-up">
                 <div class="form-row">
                   <label class="form-row-inner">
+                    <span class="label">Name and Surname</span>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="input-text"
+                      required
+                    />
                     <span class="label">Username</span>
                     <input
                       type="text"
@@ -36,11 +43,22 @@
                       class="input-text"
                       required
                     />
-
                     <span class="border"></span>
                   </label>
                 </div>
-
+                <div class="form-row">
+                  <label class="form-row-inner">
+                    <span class="label">E-Mail</span>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="input-text"
+                      required
+                    />
+                    <span class="border"></span>
+                  </label>
+                </div>
                 <div class="form-row">
                   <label class="form-row-inner">
                     <span class="label">Password</span>
@@ -51,26 +69,37 @@
                       class="input-text"
                       required
                     />
-
                     <span class="border"></span>
                   </label>
                 </div>
-                <div class="form-row"></div>
+                <!--  <div class="form-row">
+                <label class="form-row-inner">
+                  <span class="label">Confirm Password</span>
+                  <input
+                    type="password"
+                    name="confirm_password"
+                    id="confirm_password"
+                    class="input-text"
+                    required
+                  />
+                  <span class="border"></span>
+                </label>
+              </div>  -->
                 <div class="form-row-last">
                   <button
                     type="submit"
                     class="btn"
                     onclick="window.location.hash='home'"
                   >
-                    Log in
+                    Sign up
                   </button>
                 </div>
-              </div>
-              <div>
-                <p>
-                  Don't have an account?
-                  <a href="register.html"><strong>Click here</strong></a>
-                </p>
+                <div>
+                  <p>
+                    Have an account?
+                    <a href="login.html"><strong>Click here</strong></a>
+                  </p>
+                </div>
               </div>
             </form>
           </div>
@@ -88,25 +117,14 @@
     <script src="../utils/jq_validation.js"></script>
     <script src="../utils/jqBootstrapValidation.js"></script>
     <script src="../utils/toastr.js"></script>
-    <script src="../utils/utils.js"></script>
 
     <script>
-      if (window.localStorage.getItem("user")) {
-        window.location.href = "../index.html";
-      }
-      FormValidation.validate("#login-form", {}, function (data) {
-        console.log("Data serialized to ", data);
-        RestClient.post(
-          "users/login",
-          data,
-          function (response) {
-            Utils.set_to_localstorage("user", response);
-            window.location = "../index.html";
-          },
-          function (error) {
-            toastr.error(error.responseText);
-          }
-        );
+      FormValidation.validate("#signup-form", {}, function (data) {
+        console.log("Data is serialized into", data);
+
+        RestClient.post("users/add", data, function (response) {
+          toastr.success("User added successfully!");
+        });
       });
     </script>
   </body>

@@ -19,7 +19,7 @@
 
     <link rel="shortcut icon" href="images/jordan1-icon.png" />
 
-    
+    <script src="utils/utils.js"></script>
     <script src="utils/rest_client.js"></script>
     <script src="utils/constants.js"></script>
 
@@ -39,6 +39,7 @@
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/spapp.css" rel="stylesheet" />
+    <link href="css/toastr.css" rel="stylesheet" />
     
 
     
@@ -78,7 +79,7 @@
             <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
 
             <li><a class="nav-link" href="#contact">Contact us</a></li>
-            <li><a class="nav-link" href="#login">Login</a></li>
+            <li><a class="nav-link" href="views/login.html">Login</a></li>
           </ul>
 
           <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
@@ -120,11 +121,7 @@
       <section id="services" data-load="services.html"></section>
       <section id="locations" data-load="locations.html"></section>
       <section id="contact" data-load="contact.html"></section>
-      <section id="login" data-load="login.html"></section>
       <section id="account" data-load="account.html"></section>
-      <section id="product" data-load="product.html"></section>
-      <section id="cart" data-load="cart.html"></section>
-      <section id="signup" data-load="signup.html"></section>
     </main>
 
     <!-- Start Footer Section -->
@@ -175,10 +172,13 @@
     <script src="js/jquery.spapp.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="utils/form_validation.js"></script>"
+    <script src="utils/form_validation.js"></script>
+    <script src="utils/jq_validation.js"></script>
     <script src="utils/jqBootstrapValidation.js"></script>
-<script>
+    <script src="utils/toastr.js"></script>
 
+
+<script>
 // Add active class to the current nav item (highlight it)
 $(document).ready(function () {
   $(".navbar-nav .nav-link").on("click", function () {
@@ -219,3 +219,5 @@ window.addEventListener("click", function (event) {
 </script>
 <script src="utils/block-ui.js"></script>
 
+  </body>
+</html>

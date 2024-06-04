@@ -15,6 +15,13 @@ class UserDao extends BaseDao{
     }
 
     public function add_users($payload){
-        $this->insert("users", $payload);
+        return $this->insert("users", $payload);
+    }
+
+    public function get_user_by_username($username){
+        return $this->query_unique(
+            "SELECT * FROM users WHERE username = :username",
+            ["username" => $username]
+        );
     }
 }

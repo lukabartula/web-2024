@@ -1,99 +1,25 @@
-<div style="padding: 50px">
-  <div class="container">
-    <h4 class="mb-3">Profile Settings</h4>
-    <div class="row">
-      <!-- Personal Information Form -->
-      <div class="col-md-5 border-right">
-        <div class="p-4 py-5">
-          <form id="personal-info-form">
-            <div class="form-group">
-              <label class="labels">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
+<script>
+  if (!user) {
+    window.location.href = "views/login.html";
+  }
+</script>
 
-            <div class="form-group">
-              <label class="labels">Surname</label>
-              <input
-                id="surname"
-                name="surname"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="labels">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                class="form-control"
-                required
-              />
-            </div>
-
-            <button
-              id="update-button"
-              class="btn btn-primary profile-button"
-              type="button"
-            >
-              Update Personal Information
-            </button>
-          </form>
-        </div>
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="padding: 20px"
+>
+  <div class="card" style="padding: 20px">
+    <div class="user text-center">
+      <div class="mt-5 text-center">
+        <img src="images/blankuser.jpg" class="rounded-circle" width="80" />
       </div>
-      <!-- Address Form -->
-      <div class="col-md-4">
-        <div class="p-4 py-5">
-          <form id="address-form">
-            <div class="form-group">
-              <label class="labels">Address Line 1</label>
-              <input
-                id="addressLine1"
-                name="address_line1"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
+    </div>
 
-            <div class="form-group">
-              <label class="labels">City</label>
-              <input
-                id="city"
-                name="city"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label class="labels">Zip Code</label>
-              <input
-                id="zipCode"
-                name="zip_code"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
-            <button
-              id="address-button"
-              class="btn btn-primary profile-button"
-              type="button"
-            >
-              Update Address
-            </button>
-          </form>
-        </div>
-      </div>
+    <div class="mt-5 text-center">
+      <h4 class="mb-0">Iman Arifhodžić</h4>
+      <span class="text-muted d-block mb-2">Los Angeles</span>
+      <span class="text-muted d-block mb-2">imancica</span>
+      <span class="text-muted d-block mb-2">iman.a@stu.ibu.edu.ba</span>
     </div>
   </div>
 </div>
