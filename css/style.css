@@ -20,7 +20,7 @@ body {
 }
 label {
   font-weight: bold;
-  color: #d6d6d6;
+  color: #a7a7a7;
 }
 form {
   display: grid;
@@ -33,7 +33,7 @@ form {
 .update-btn {
   background-color: #000000;
   color: #fff;
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -797,6 +797,12 @@ a.more {
   background: #3b5d50;
   margin-right: 20px;
   color: #ffffff;
+}
+
+.card {
+  border-radius: 20px;
+  width: 70%;
+  height: 600px;
 }
 
 textarea {
