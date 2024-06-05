@@ -82,12 +82,13 @@
                 </div>
               </div>
 
+              <h2 class="mb-4" style="display: none;">You need to be <a href="views/login.html">logged in</a> to leave a review</h2>
               <form id="review-form">
                 <!--ne treba ovdje ni ime ni mail jer bi trebao uzet id osobe koja je log inana i to sendao u bazu za 
                 reviews tabelu-->
                 <div class="form-group">
                   <label>Review</label>
-                  <textarea name="review-text" id="review-text" rows="3" class="form-control" required></textarea>
+                  <textarea name="review_text" id="review_text" rows="3" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" onclick="window.location.hash = 'home'">Submit</button>
               </form>
@@ -109,12 +110,24 @@
 	
 
   <script>
-    FormValidation.validate("#review-form", {}, function(data){
+    if (!localStorage.getItem('user')) {
+      document.querySelector('h2').style.display = 'block';
+      document.querySelector('form').style.display = 'none';
+    } else {
+      FormValidation.validate("#review-form", {}, function(data){
       console.log("Data serialized to", data);
-
+  
+      // Retrieve the user data from local storage and parse it
+      var user = JSON.parse(localStorage.getItem('user'));
+  
+      // Add the user's ID to the data object
+      data.user_id = user.id;
+  
       RestClient.post("reviews/add", data, function(response){
         console.log("Review added successfully", response);
         toastr.success("Review added successfully");
       });
     });
-  </script> 
+
+    }
+  </script>

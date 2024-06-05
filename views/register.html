@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/toastr.css" />
     <link rel="stylesheet" href="../css/style.css" />
 
+    <script src="../utils/utils.js"></script>
     <script src="../utils/rest_client.js"></script>
     <script src="../utils/constants.js"></script>
 
@@ -116,14 +117,13 @@
     <script src="../utils/form_validation.js"></script>
     <script src="../utils/jq_validation.js"></script>
     <script src="../utils/jqBootstrapValidation.js"></script>
-    <script src="../utils/toastr.js"></script>
 
     <script>
       FormValidation.validate("#signup-form", {}, function (data) {
         console.log("Data is serialized into", data);
 
         RestClient.post("users/add", data, function (response) {
-          toastr.success("User added successfully!");
+          //toastr.success("User added successfully!");
         });
       });
     </script>

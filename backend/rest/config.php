@@ -29,3 +29,13 @@ class Config {
         return isset($_ENV[$name]) && trim($_ENV[$name]) != "" ? $_ENV[$name] : $default;
     }
 }
+
+
+/*
+// Database access connection
+define("DB_NAME", "solesecure");
+define("DB_PORT", "3306");
+define("DB_USER", "root");
+define("DB_PASSWORD", "root");
+define("DB_HOST", "127.0.0.1"); // localhost
+define('JWT_SECRET', 'mnogojakasifra');*/

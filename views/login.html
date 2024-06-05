@@ -92,7 +92,7 @@
 
     <script>
       if (window.localStorage.getItem("user")) {
-        window.location.href = "../index.html";
+        window.location.href = "../index.html"; //change to index.html/#account
       }
       FormValidation.validate("#login-form", {}, function (data) {
         console.log("Data serialized to ", data);

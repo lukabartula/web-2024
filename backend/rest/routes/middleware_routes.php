@@ -7,7 +7,7 @@ use Firebase\JWT\Key;
 Flight::route('/*', function(){
     if(
         strpos(Flight::request()->url, '/users/login') === 0 ||
-        strpos(Flight::request()->url, '/users/register') === 0
+        strpos(Flight::request()->url, '/users/add') === 0
     ) {        return TRUE;
     } else {
         try {
@@ -15,7 +15,7 @@ Flight::route('/*', function(){
             if (!$token){
                 Flight::halt(401, 'Token not provided');
             }
-            $decoded_token = JWT::decode($token, new Key(JWT_SECRET, "HS256"));
+            $decoded_token = JWT::decode($token, new Key(Config::JWT_SECRET(), "HS256"));
     
             Flight::set('user', $decoded_token->user);
             Flight::set('jwt_token', $token);

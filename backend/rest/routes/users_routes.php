@@ -89,7 +89,7 @@ FLight::group('/users', function(){
  *       description="Unauthorized",
  * ),
  *      @OA\RequestBody(
- *          description="User object that needs to be added to the database",
+ *          description="User object that needs to be logged in to the database",
  *          @OA\JsonContent(
  *              @OA\Property(property="username", type="string", example="avdoooo", description="Users username"),
  *             @OA\Property(property="password", type="string", example="jasammaliavdo", description="Users password"),
@@ -115,7 +115,7 @@ FLight::group('/users', function(){
 
         ];
 
-        $token = JWT::encode($jwt_payload, JWT_SECRET, "HS256");
+        $token = JWT::encode($jwt_payload, Config::JWT_SECRET(), "HS256");
 
         Flight::json(
             array_merge($user, ['token' => $token])
