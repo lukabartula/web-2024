@@ -2,7 +2,11 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-define('BASE_URL', 'http://localhost/web-2024/backend/');
+if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1'){
+    define('BASE_URL', 'http://localhost/web-2024/backend/');
+} else {
+    define('BASE_URL', 'https://sea-turtle-app-tidm4.ondigitalocean.app/backend/');
+}
 
 
 error_reporting(0);
